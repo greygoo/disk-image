@@ -4,6 +4,8 @@
     packages:
       - vim
       - btrfs-progs
+      - armbian-config
+      - screen
   tasks:
    - name: Ping my hosts
      ansible.builtin.ping:
