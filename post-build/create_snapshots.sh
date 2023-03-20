@@ -2,7 +2,7 @@
 
 
 LOOP_DEV=$(losetup -f)
-trap losetup -d ${LOOP_DEV}INT
+trap losetup -d ${LOOP_DEV} INT
 
 echo "Mounting built image"
 losetup -P ${LOOP_DEV} output/images/Armbian*.img
