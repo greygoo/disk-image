@@ -1,0 +1,4 @@
+orangepi3lts:
+  hosts: all
+  vars:
+    default_user: "nomad"
