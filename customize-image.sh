@@ -37,7 +37,6 @@ Main() {
                 jammy)
                         # your code here
                         /tmp/overlay/install.sh
-                        bash
                         ;;
         esac
 } # Main
