@@ -1,0 +1,23 @@
+- name: Create default user 
+  hosts: localhost
+  vars:
+    default_user: nomad
+  tasks:
+   - name: Ping my hosts
+     ansible.builtin.ping:
+   - name: Print message
+     ansible.builtin.debug:
+       msg: Creating default user "{{ default_user }}"
+   - name: Create User
+     ansible.builtin.user:
+       name: "{{ default_user }}"
+       password: "$6$mysecretsalt$GiOs7qMklO/NTGhwrk.RaUfsqGtswMKHD4sYHvy9OU04jg8bzFCU.PSCwmOWS6b6lvUfyrB12O9D0bP83uE3J1"
+       comment: default user
+       shell: /bin/bash
+       uid: 1000
+       group: users
+       groups: sudo,tty,dialout,cdrom,floppy,audio,video,plugdev
+       append: yes
+       generate_ssh_key: yes
+       ssh_key_bits: 2048
+       ssh_key_file: .ssh/id_rsa
