@@ -27,6 +27,7 @@ echo ${BOARD}
   CONSOLE_AUTOLOGIN=no \
   PREFER_DOCKER=yes \
   CLEAN_LEVEL=cache,make,images \
+  KERNEL_CONFIGURE=no \
   COMPRESS_OUTPUTIMAGE=sha,gpg,im | tee ${LOG}
 
 sudo ./userpatches/post-build/create_snapshots.sh
