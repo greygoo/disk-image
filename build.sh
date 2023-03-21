@@ -1,5 +1,13 @@
 #!/bin/sh
 
+if [ ! -f compile.sh ] && [ -d build ]; then
+  echo "No compile.sh found. Please change into the build dir"
+  exit 1
+elif [ ! -f compile.sh ] && [ ! -d build ]; then
+  echo "No compile.sh and not build dir found. Please run install.sh"
+  exit 1
+fi  
+  
 
 LOG="build.log"
 BOARD="orangepi3-lts"
