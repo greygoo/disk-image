@@ -12,6 +12,7 @@ echo "Moving /home to a subvolume"
 mv /opt/armbian/home/ /opt/armbian/home.orig
 btrfs subvolume create /opt/armbian/home/
 mv /opt/armbian/home.orig/* /opt/armbian/home/
+rmdir /opt/armbian/home.orig
 
 echo "Adding entry for subvolume /home to /etc/fstbab"
 HOME_ID=`btrfs subvolume list /opt/armbian/ | egrep "home$" | awk '{ print $2 }'`
