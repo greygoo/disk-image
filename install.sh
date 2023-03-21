@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 BRANCH=${1:-"v23.02"}
 
@@ -7,7 +7,7 @@ echo "Using branch ${BRANCH}. If you like to build the latest armbian, run: $0 m
 echo "Cloning Armbian build system"
 git clone --branch=${BRANCH} https://github.com/armbian/build
 
-echo "Patching build syste"
+echo "Patching build system"
 # For 5.15 kernel (old build system)
 if [ ${BRANCH} == "v23.02" ]; then
   pushd build
