@@ -17,7 +17,7 @@ cd disk-image
 
 - Install the Armbian Build System
 ```
-  ./install.sh
+./install.sh
 ```
 
 - Build a Radio-Meshnet Image
