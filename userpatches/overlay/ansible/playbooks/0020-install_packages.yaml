@@ -1,0 +1,79 @@
+- name: Install additional packages
+  hosts: localhost
+  vars:
+    packages_rns:
+      - libgl1-mesa-dev
+      - python3-pip
+      - python3-setuptools
+      - build-essential
+      - python3-dev
+      - libffi-dev
+      - cargo
+      - libssl-dev
+      - python3-wheel
+      - rust-all
+      - python3-setuptools-rust
+      - python3-pil
+      - python3-pygame  
+    packages_console:
+      - iw
+      - tcpdump
+      - git
+      - iptables
+      - nftables
+      - bridge-utils
+      - vim
+      - btrfs-progs
+      - armbian-config
+      - screen
+    packages_desktop:
+      - wireshark
+      - libxkbcommon-x11-0
+      - xsel
+      - fonts-roboto
+      - lightdm-gtk-greeter
+      - lightdm-gtk-greeter-settings
+      - xfonts-base
+      - tightvncserver
+      - x11vnc
+      - xorg
+      - lightdm
+      - xfce4
+      - tango-icon-theme
+      - gnome-icon-theme
+      - dbus-x11
+    packages_services:
+      - firewalld
+      - i2pd
+  tasks:
+   - name: Ping my hosts
+     ansible.builtin.ping:
+   - name: Print message
+     ansible.builtin.debug:
+       msg: Installing Packages
+   - name: Install Console Packages
+     ansible.builtin.apt:
+       pkg:
+         "{{ packages_console }}"
+       update_cache: yes
+   - name: Install Desktop Packages
+     ansible.builtin.apt:
+       pkg:
+         "{{ packages_desktop }}"
+       update_cache: yes
+   - name: Install Server Packages
+     ansible.builtin.apt:
+       pkg:
+         "{{ packages_services }}"
+       update_cache: yes
+   - name: Install RNS required Packages
+     ansible.builtin.apt:
+       pkg:
+         "{{ packages_rns }}"
+       update_cache: yes
+   - name: Remove useless packages from the cache
+     ansible.builtin.apt:
+       autoclean: yes
+   - name: Remove dependencies that are no longer required
+     ansible.builtin.apt:
+       autoremove: yes
