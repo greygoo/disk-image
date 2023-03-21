@@ -21,7 +21,7 @@ echo ${BOARD}
   CLEAN_LEVEL=cache,make,images \
   COMPRESS_OUTPUTIMAGE=sha,gpg,im | tee ${LOG}
 
-./userpatches/post-build/create_snapshots.sh
+sudo ./userpatches/post-build/create_snapshots.sh
 
 #  DISABLE_IPV6=false \
 #  EXTERNAL=yes \
