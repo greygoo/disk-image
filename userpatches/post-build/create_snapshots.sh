@@ -5,6 +5,7 @@ LOOP_DEV=$(losetup -f)
 
 if [ ! -f output/images/Armbian*.img ]; then
   echo "No image file found, exiting"
+  exit 1
 fi
 
 trap "losetup -d ${LOOP_DEV}" INT TERM
