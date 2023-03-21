@@ -18,27 +18,15 @@ BOARD=$3
 BUILD_DESKTOP=$4
 
 Main() {
-        case $RELEASE in
-                stretch)
-                        # your code here
-                        ;;
-                buster)
-                        # your code here
-                        ;;
-                bullseye)
-                        # your code here
-                        ;;
-                bionic)
-                        # your code here
-                        ;;
-                focal)
-                        # your code here
-                        ;;
-                jammy)
-                        # your code here
-                        /tmp/overlay/install.sh
-                        ;;
-        esac
+	echo "Installing git"
+       	yes | DEBIAN_FRONTEND=noninteractive apt-get -yqq install git
+	echo "Checking out installer"
+	rm -rf /tmp/installer
+	git clone https://github.com/greygoo/system-installer.git /tmp/installer
+	echo "Run installer"
+	pushd /tmp/installer
+	./install.sh $RELEASE $LINUXFAMILY $BOARD
+	popd
 } # Main
 
 Main "$@"
