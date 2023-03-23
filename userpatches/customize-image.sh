@@ -25,7 +25,7 @@ Main() {
 	git clone https://github.com/greygoo/system-installer.git /tmp/installer
 	echo "Run installer"
 	pushd /tmp/installer
-	./install.sh $RELEASE $LINUXFAMILY $BOARD $BRANDING
+	./install.sh image_install $BOARD $BRANDING
 	popd
 } # Main
 
