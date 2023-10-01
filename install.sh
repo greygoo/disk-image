@@ -1,8 +1,8 @@
 #!/bin/bash
 
-BRANCH=${1:-"v23.02"}
+BRANCH=${1:-"main"}
 
-echo "Using branch ${BRANCH}. If you like to build the latest armbian, run: $0 main"
+echo "Using branch ${BRANCH}. If you like to build with a branch of the build system, run: $0 <>"
 
 if [ ! -d build ]; then
     echo "Cloning Armbian build system"
