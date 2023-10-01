@@ -18,6 +18,7 @@ BOARD=$3
 BUILD_DESKTOP=$4
 
 Main() {
+	apt-get update
 	echo "Installing git"
        	yes | DEBIAN_FRONTEND=noninteractive apt-get -yqq install git
 	echo "Checking out installer"
