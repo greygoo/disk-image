@@ -39,6 +39,9 @@ current_home_id=$(btrfs sub list /tmp/armbian/home | grep home_current | awk '{ 
 label=`cat /tmp/armbian/etc/fstab | grep " / " | awk ' { print $1 } ' | sed "s/UUID=//"`
 sed -i "2i UUID=$label /home btrfs defaults,noatime,commit=600,subvolid=$current_home_id 0 1" /tmp/armbian/etc/fstab
 
+echo New fstab:
+cat /tmp/armbian/etc/fstab
+
 echo "Finale subvolume setup:"
 btrfs subvolume list /tmp/armbian
 
