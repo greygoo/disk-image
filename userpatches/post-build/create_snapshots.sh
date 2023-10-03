@@ -17,7 +17,7 @@ mount ${LOOP_DEV}p2 /tmp/armbian/
 
 echo "Moving /home to a subvolume"
 mv /tmp/armbian/home/ /tmp/armbian/home.orig
-btrfs subvolume create /tmp/armbian/home/
+btrfs subvolume create /tmp/armbian/home
 mv /tmp/armbian/home.orig/* /tmp/armbian/home/
 rmdir /tmp/armbian/home.orig
 
