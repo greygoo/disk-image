@@ -3,7 +3,7 @@
 ## Releases
 
 ### Alpha 1
-Image: https://drive.google.com/file/d/1U7AHDiOMxg0NtLUYzwZ4HnaizRrUrFgd/view?usp=sharing
+Image: https://drive.google.com/file/d/1U7AHDiOMxg0NtLUYzwZ4HnaizRrUrFgd/view?usp=sharing <br>
 Release Notes: https://github.com/greygoo/disk-image/blob/main/release_notes/release_notes_EN-20231004.md
 
 ## Description
