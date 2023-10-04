@@ -1,5 +1,11 @@
 # disk-image
 
+## Releases
+
+### Alpha 1
+Image: https://drive.google.com/file/d/1U7AHDiOMxg0NtLUYzwZ4HnaizRrUrFgd/view?usp=sharing
+Release Notes: https://github.com/greygoo/disk-image/blob/main/release_notes/release_notes_EN-20231004.md
+
 ## Description
 Wrapper to setup armbian build environment with Radio-Meshnet modifications
 
