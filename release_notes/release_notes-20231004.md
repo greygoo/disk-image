@@ -22,7 +22,7 @@ The base is an Armbian minimal build with the following configuration:
 - RELEASE `jammy`
 
 ## Reticulum
-Reticulum comes as python packages and is installed in the home of user `nomad`. Two systemd service files are added to the system, that start the rns service and the nomadnet commandline app in a screen session for the user `nomad`. Also a GUI application called `sideband` is installed and can be launched from the desktop.
+Reticulum comes as python packages and is installed in the home of user `nomad`. Two systemd service files are added to the system, that start the rns service and the `nomadnet` commandline app in a screen session for the user `nomad`. Also a GUI application called `sideband` is installed and can be launched from the desktop.
 
 ### Reticulum Python Packages
 - rns
@@ -102,13 +102,17 @@ sudo dd if=output/images/Armbian_23.08.0-trunk_Orangepi3-lts_jammy_current_6.1.5
 # Usage
 ## Nomadnet
 - Connect to running session, run as user nomad:
-```screen -x```
+```
+screen -x
+```
 
 - Disconnect:
 ```CTRL+a+d```
 
 **Note:** This session is started upon bootup for the user in order to be able to run it without a display connected. If you quit this instance, you can always restart NomadNet by running
-```nomadnet```
+```
+nomadnet
+```
 
 ## Sideband
 TODO
@@ -116,7 +120,9 @@ TODO
 ## Reset to initial state
 **NOTE** A factory reset will remove all changes you made so far to the system!
 The image is configured with btrfs and has a snapshot of the state after first boot. In order to reset the device, run
-```factory-reset```
+```
+factory-reset
+```
 
 ## LoRa Configuration
 To change the settings for your connected LoRa device, please run
