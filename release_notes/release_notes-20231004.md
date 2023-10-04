@@ -117,7 +117,7 @@ nomadnet
 ## Sideband
 TODO
 
-## Reset to initial state
+## Factory Reset 
 **NOTE** A factory reset will remove all changes you made so far to the system!
 The image is configured with btrfs and has a snapshot of the state after first boot. In order to reset the device, run
 ```
