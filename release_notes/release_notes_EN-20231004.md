@@ -1,3 +1,5 @@
+Latest version of this document: https://github.com/greygoo/disk-image/blob/main/release_notes/release_notes_EN-20231004.md
+
 # Description
 This is the Alpha-1 release of an Armbian image doe OrangePi3-LTS, containing preconfigured packages for reticulum based networks. 
 
