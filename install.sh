@@ -34,3 +34,4 @@ cp -r userpatches build
 
 echo "Adding build script"
 cp build.sh build
+cp -r boards build
