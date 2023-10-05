@@ -22,6 +22,9 @@ echo ROOTFS_TYPE: "${ROOTFS_TYPE}"
 
 ./compile.sh \
   BOARD=${BOARD} \
+  RELEASE=${RELEASE} \
+  BRANCH=${BRANCH} \
+  ROOTFS_TYPE="${ROOTFS_TYPE}" \
   BUILD_MINIMAL=yes \
   BUILD_DESKTOP=no \
   BUILD_ONLY=default \
