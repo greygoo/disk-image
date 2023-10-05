@@ -35,7 +35,7 @@ echo ROOTFS_TYPE: "${ROOTFS_TYPE}"
   KERNEL_CONFIGURE=no \
   COMPRESS_OUTPUTIMAGE=sha,gpg,im | tee ${LOG}
 
-if [[ $ROOTFS_TYPE = "btrfs" ]]; then
+if [ $ROOTFS_TYPE = "btrfs" ]; then
   sudo ./userpatches/post-build/create_snapshots.sh
 fi
 
