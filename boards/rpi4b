@@ -1,0 +1,4 @@
+# Armian specific
+BRANCH=current
+RELEASE=jammy
+ROOTFS_TYPE=ext4
