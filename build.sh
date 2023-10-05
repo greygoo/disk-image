@@ -6,23 +6,25 @@ if [ ! -f compile.sh ] && [ -d build ]; then
 elif [ ! -f compile.sh ] && [ ! -d build ]; then
   echo "No compile.sh and not build dir found. Please run install.sh"
   exit 1
-fi  
-  
+fi
+
 
 LOG="build.log"
-BOARD="orangepi3-lts"
 rm ${LOG}
 
-echo ${BOARD}
+BOARD=${1:-"orangepi3-lts"}
+. ./boards/${BOARD}
+
+echo BOARD: "${BOARD}"
+echo RELEASE: "${RELEASE}"
+echo BRANCH: "${BRANCH}"
+echo ROOTFS_TYPE: "${ROOTFS_TYPE}"
 
 ./compile.sh \
   BOARD=${BOARD} \
-  BRANCH=current \
-  RELEASE=jammy \
   BUILD_MINIMAL=yes \
   BUILD_DESKTOP=no \
   BUILD_ONLY=default \
-  ROOTFS_TYPE=btrfs \
   EXTRAWIFI=yes \
   CONSOLE_AUTOLOGIN=no \
   PREFER_DOCKER=yes \
@@ -30,7 +32,9 @@ echo ${BOARD}
   KERNEL_CONFIGURE=no \
   COMPRESS_OUTPUTIMAGE=sha,gpg,im | tee ${LOG}
 
-sudo ./userpatches/post-build/create_snapshots.sh
+if [[ $ROOTFS_TYPE == "btrfs" ]]; then
+  sudo ./userpatches/post-build/create_snapshots.sh
+fi
 
 #  DISABLE_IPV6=false \
 #  EXTERNAL=yes \
