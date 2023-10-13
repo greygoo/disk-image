@@ -1,17 +1,46 @@
 Latest version of this document: https://github.com/greygoo/disk-image/blob/main/release_notes/release_notes_EN-20231004.md
 
 # Description
-This is the Alpha-1 release of an Armbian image doe OrangePi3-LTS, containing preconfigured packages for reticulum based networks. 
+This is the Alpha2 release of an Armbian image for OrangePi3-LTS, containing preconfigured packages for RF related tasks 
 
 # Known Issues
-Issue: Internal WiFi is not working
-Workaround: Use USB WiFi
+Issue: direwolf configuration files are not yet working
+Workaround: fix or wait for next release
 
-Issue: Serial output is not enabled
-Workaround: Use display and keyboard
+Issue: soundmodem configuration files are not yet working
+Workaround: fix or wait for next release
 
-Issue: Not all features, like Sideband, have been tested
-Workaround: Test and report issues ;)
+# Changes for alpha2
+## Added Packages
+### SDR Packages
+- rtl-sdr
+- gqrx-sdr
+
+### Osmocom Packges
+- extrepo
+- osmocom-bb
+
+### Service Packages
+- pulseaudio
+- pavucontrol
+- soundmodem
+- direwolf
+
+### QTsoundmodem PAckages
+- qtbase5-dev
+- libqt5serialport5
+- libqt5serialport5-dev
+- libfftw3-dev
+- libpulse-dev
+- libasound2-dev
+- libkf5pulseaudioqt-dev
+
+## Added Tools
+- QtSoundmodem
+- emmc_install.sh
+
+## Added Services
+- emmc_install
 
 # Configuration
 - Default User: `nomad`
@@ -101,7 +130,7 @@ sudo dd if=output/images/Armbian_23.08.0-trunk_Orangepi3-lts_jammy_current_6.1.5
 4. insert the micro SD Card into the Orange Pi 3 LTS and connect it to power
 
 
-# Usage
+# Basic Usage
 ## Nomadnet
 - Connect to running session, run as user nomad:
 ```
@@ -132,3 +161,22 @@ To change the settings for your connected LoRa device, please run
 lora_config.sh
 ```
 
+## Install to emmc
+### Run manually
+To install the current image on sd card to the internal emmc of the sbc, run
+```
+sudo emmc_install.sh
+```
+
+### Run automatic at boot
+To automatically install the image on the sd card on bootup for unattended emmc install, boot the sd card and run
+```
+sudo enable emmc-install@tty1
+```
+Now reboot the sbc. the output of the emmc installer can be seen on the first virtual terminal
+Wait for at least 10 minutes. If you want to check if the installation is still running, run
+```
+ps ax | grep nand-sata-autoinstall
+```
+As long as this process is active, the installer is still running.
+Once the installer has finished or 10 minutes have passed, power off the sbc, remove the sd card and boot from the internal emmc.
