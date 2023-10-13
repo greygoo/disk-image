@@ -1,4 +1,4 @@
-Latest version of this document: https://github.com/greygoo/disk-image/blob/main/release_notes/release_notes-Alpha2-20231004_EN.md
+Latest version of this document: https://github.com/greygoo/disk-image/blob/main/release_notes/release_notes-Alpha2-20231013_EN.md 
 
 # Description
 This is the Alpha2 release of an Armbian image for OrangePi3-LTS, containing preconfigured packages for RF related tasks 

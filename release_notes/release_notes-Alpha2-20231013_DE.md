@@ -1,4 +1,4 @@
-Neueste Version dieses Dokuments: https://github.com/greygoo/disk-image/blob/main/release_notes/release_notes_DE-20231004.md
+Neueste Version dieses Dokuments: https://github.com/greygoo/disk-image/blob/main/release_notes/release_notes-Alpha2-20231013_DE.md 
 
 # Beschreibung
 Dies ist die Alpha-1-Version eines Armbian Image fuer den OrangePi3-LTS, das vorkonfigurierte Pakete für Retikulum-basierte Netzwerke enthält.
