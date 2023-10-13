@@ -169,12 +169,12 @@ sudo emmc_install.sh
 ### Beim Booten automatisch ausführen
 Um das Image beim Booten automatisch auf der SD-Karte für eine unbeaufsichtigte EMMC-Installation zu installieren, starten Sie die SD-Karte und führen Sie sie aus
 ```
-sudo sysisconfig enable emmc-install@tty1
+sudo sysconfig enable emmc-install@tty1
 ```
 Starten Sie nun den SBC neu. Die Ausgabe des EMMC-Installationsprogramms ist auf dem ersten virtuellen Terminal zu sehen
 Warten Sie mindestens 10 Minuten. Wenn Sie überprüfen möchten, ob die Installation noch läuft, führen Sie Folgendes aus
-„
+```
 ps ax | grep nand-sata-autoinstall
-„
+```
 Solange dieser Prozess aktiv ist, läuft der Installer noch.
 Sobald das Installationsprogramm abgeschlossen ist oder 10 Minuten vergangen sind, schalten Sie den SBC aus, entfernen Sie die SD-Karte und starten Sie vom internen EMMC.
